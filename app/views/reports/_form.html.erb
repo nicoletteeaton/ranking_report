@@ -1,0 +1,17 @@
+<%= form_for(@report) do |f| %>
+  <div class="field">
+    <%= f.label :panel %><br />
+    <%= f.text_field :panel %>
+  </div>
+  <div class="field">
+    <%= f.label :closing %><br />
+    <%= f.date_field :closing %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

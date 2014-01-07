@@ -1,0 +1,22 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+development: &main_settings
+  adapter: mysql
+  database: ranking_report_development
+  username: root
+  password: 
+  host: localhost
+  reconnect: true
+
+test: &test_settings
+  <<: *main_settings
+  database: ranking_report_test
+
+
+development_reporting: &reporting_settings
+  <<: *main_settings
+  username: reporting
+  password: 
+  
+  

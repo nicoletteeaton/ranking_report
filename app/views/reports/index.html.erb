@@ -1,0 +1,37 @@
+<h1>Reports</h1>
+
+<p>
+	Download:
+	<%= link_to "CSV", reports_path(format: "csv") %>
+</p>
+
+<table>
+<thead>
+	<tr>
+		<th>Panel</th>
+		<th>Closing</th>
+		<th>Status</th>
+		<th></th>
+	</tr>
+</thead>
+<tbody>
+	<% @reports.each do |report| %>
+	<tr>
+		<td><%= report.panel %></td>
+		<td><%= report.closing %></td>
+		<td><%= report.status %></td>
+		<td><%= link_to "Edit", edit_report_path(report) %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+
+<!-- <h2> Import Reports </h2>
+<%= form_tag import_panels_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<br>
+	<%= submit_tag "Import" %>
+<% end %>
+
+ -->
