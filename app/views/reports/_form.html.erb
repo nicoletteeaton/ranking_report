@@ -1,17 +1,11 @@
+
+<h2><%= @report.applicant_name %></h2>
+<h3>Application Number: <%= @report.application_number %></h3>
+
+
 <%= form_for(@report) do |f| %>
-  <div class="field">
-    <%= f.label :panel %><br />
-    <%= f.text_field :panel %>
-  </div>
-  <div class="field">
-    <%= f.label :closing %><br />
-    <%= f.date_field :closing %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="actions">
+    <%= f.label :rank %>
+    <%= f.text_field :rank %>
     <%= f.submit %>
-  </div>
-<% end %>
+    <% end %>
+

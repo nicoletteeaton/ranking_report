@@ -5,13 +5,17 @@ RankingReport::Application.routes.draw do
   #   get 'reports/index' => :index
   #   get 'reports/import' => :import
   # end
-
+  
   resources :reports do
     collection { post :import}
   end
 
   resources :panels do
     collection { post :import}
+    resources :reports
+    member do
+      get :reports
+    end
   end
 
   root to: 'panels#index'

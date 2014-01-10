@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107194206) do
+ActiveRecord::Schema.define(version: 20140109172633) do
 
   create_table "panels", force: true do |t|
     t.string   "name"
@@ -20,12 +20,28 @@ ActiveRecord::Schema.define(version: 20140107194206) do
   end
 
   create_table "reports", force: true do |t|
-    t.string   "panel"
-    t.date     "closing"
-    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "panel_id"
+    t.integer  "application_number"
+    t.string   "applicant_name"
+    t.integer  "applicant_level"
+    t.float    "avg_z_score"
+    t.string   "quality_group"
+    t.integer  "rank"
+    t.string   "reviewer_1"
+    t.integer  "raw_score_1"
+    t.float    "z_score_1"
+    t.string   "reviewer_2"
+    t.integer  "raw_score_2"
+    t.float    "z_score_2"
+    t.string   "reviewer_3"
+    t.integer  "raw_score_3"
+    t.float    "z_score_3"
+    t.string   "reviewer_4"
+    t.integer  "raw_score_4"
+    t.float    "z_score_4"
+    t.integer  "former_rank"
   end
 
 end

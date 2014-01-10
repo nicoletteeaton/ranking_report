@@ -29,6 +29,20 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise', '3.0.0.rc'
 
+gem 'activeresource', :require => 'active_resource'
+
+# gem 'admin', :git => 'git@git.asee.org:plugins/admin.git', :branch => :rails4
+
+gem 'admin', :path => '../admin'
+
+# gem "authenticated_system", :git => 'git@git.asee.org:gems/authenticated_system.git', :branch => :master
+
+gem "authenticated_system", :path => '../authenticated_system-0733bb5b6c44'
+
+# gem 'deploy', :git => 'git@git.asee.org:gems/deploy.git', :branch => :realgem
+
+gem "deploy", :path => '../deploy'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

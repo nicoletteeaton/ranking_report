@@ -1,26 +1,63 @@
-<h1>Reports</h1>
 
+<% @panel = Panel.find(params[:panel_id]) %>
+<h2><%=@panel.name%></h2>
+<br>
 <p>
 	Download:
-	<%= link_to "CSV", reports_path(format: "csv") %>
+	<%= link_to "CSV", panel_reports_path(format: "csv") %>
 </p>
 
-<table>
+
+<table class="table">
 <thead>
 	<tr>
-		<th>Panel</th>
-		<th>Closing</th>
-		<th>Status</th>
+		<th>Application Number</th>
+		<th>Applicant Name</th>
+		<th>Applicant Level</th>
+		<th>Avg Z-Score</th>
+		<th>Quality Group</th>
+		<th>Rank</th>
 		<th></th>
+		<th>Former Rank</th>
+		<th>Reviewer 1</th>
+		<th>Raw Score 1</th>
+		<th>Z-Score 1</th>
+		<th>Reviewer 2</th>
+		<th>Raw Score 2</th>
+		<th>Z-Score 2</th>
+		<th>Reviewer 3</th>
+		<th>Raw Score 3</th>
+		<th>Z-Score 3</th>
+		<th>Reviewer 4</th>
+		<th>Raw Score 4</th>
+		<th>Z-Score 4</th>
+		
 	</tr>
 </thead>
 <tbody>
+
 	<% @reports.each do |report| %>
 	<tr>
-		<td><%= report.panel %></td>
-		<td><%= report.closing %></td>
-		<td><%= report.status %></td>
-		<td><%= link_to "Edit", edit_report_path(report) %></td>
+		<td><%= report.application_number %></td>
+		<td><%= report.applicant_name %></td>
+		<td><%= report.applicant_level %></td>
+		<td><%= report.avg_z_score %></td>
+		<td><%= report.quality_group %></td>
+		<td><%= report.rank %></td>
+		<td><%= link_to "Rerank", edit_report_path(report) %>&nbsp;&nbsp;</td>
+		<td><%= report.former_rank %></td>
+		<td><%= report.reviewer_1 %></td>
+		<td><%= report.raw_score_1 %></td>
+		<td><%= report.z_score_1 %></td>
+		<td><%= report.reviewer_2 %></td>
+		<td><%= report.raw_score_2 %></td>
+		<td><%= report.z_score_2 %></td>
+		<td><%= report.reviewer_3 %></td>
+		<td><%= report.raw_score_3 %></td>
+		<td><%= report.z_score_3 %></td>
+		<td><%= report.reviewer_4 %></td>
+		<td><%= report.raw_score_4 %></td>
+		<td><%= report.z_score_4 %></td>
 	</tr>
 	<% end %>
 </tbody>

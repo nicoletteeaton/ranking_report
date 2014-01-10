@@ -1,4 +1,5 @@
-class PanelsController < ApplicationController
+class PanelsController < Admin::ApplicationController
+  layout 'application'
 	def create
   	@panel = Panel.new(report_params)
   	@panel.save
@@ -26,8 +27,12 @@ class PanelsController < ApplicationController
   end
 
   def import
-  	Panel.import(params[:file])
-	redirect_to panels_path, notice: "Report imported."
+    unless params[:file].nil?
+      Panel.import(params[:file])
+      redirect_to panels_path, notice: "Report imported."
+    else
+      redirect_to panels_path, notice: "Please select a file"
+    end
   end
 
   private

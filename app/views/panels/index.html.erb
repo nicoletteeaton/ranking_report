@@ -1,21 +1,10 @@
-<h1>Panels</h1>
 
-<p>
-	Download:
-	<%= link_to "CSV", reports_path(format: "csv") %>
-</p>
+<table class='table'>
 
-<table>
-<thead>
-	<tr>
-		<th>Panel</th>
-		<th></th>
-	</tr>
-</thead>
 <tbody>
 	<% @panels.each do |panel| %>
 	<tr>
-		<td><%= link_to "#{panel.name}", panels_path(panel)%></td>
+		<td><%= link_to "#{panel.name}", panel_reports_path(panel.id)%></td>
 		<!-- link to reports_path(@report) where @report=Report.find(panel_id: :panel.id) -->
 	</tr>
 	<% end %>
@@ -23,9 +12,12 @@
 </table>
 
 
-<h2> Import Reports </h2>
-<%= form_tag import_panels_path, multipart: true do %>
+<div> 
+	<h4>Import Reports </h4>
+	<%= form_tag import_panels_path, multipart: true do %>
 	<%= file_field_tag :file %>
 	<br>
 	<%= submit_tag "Import" %>
 <% end %>
+</div>
+

@@ -9,9 +9,9 @@ class Report < ActiveRecord::Base
 		end
 	end
 
-	def self.import(file)
-		CSV.foreach(file.path, headers: true) do |row|
-			Report.create(panel: row[0], closing: row[1], status: row[2])
-		end
-	end
+	# def self.import(file)
+	# 	CSV.foreach(file.path, headers: true) do |row|
+	# 		Report.create(panel: row[0], closing: row[1], status: row[2])
+	# 	end
+	# end
 end
