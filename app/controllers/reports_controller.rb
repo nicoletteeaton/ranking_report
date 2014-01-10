@@ -33,9 +33,10 @@ class ReportsController < Admin::ApplicationController
 
   def index
   	@reports = Report.where("panel_id = ?", params[:panel_id]).order(:rank)
+    panel_name = Panel.find(params[:panel_id]).name
   	respond_to do |format|
   		format.html
-  		format.csv { send_data @reports.to_csv }
+  		format.csv { send_data @reports.to_csv, filename: "#{panel_name}.csv" }
   	end
   end
 
