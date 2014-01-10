@@ -1,5 +1,25 @@
-PATH
-  remote: ../admin
+GIT
+  remote: git@git.asee.org:gems/authenticated_system.git
+  revision: 0733bb5b6c4450ed1e6adff6081d9c940df5d465
+  branch: master
+  specs:
+    authenticated_system (0.0.1)
+
+GIT
+  remote: git@git.asee.org:gems/deploy.git
+  revision: f90afa04f7e947ba47797b43b7483632d7720906
+  branch: realgem
+  specs:
+    deploy (0.0.3)
+      capistrano (>= 2.11)
+      mysql2
+      newrelic_rpm
+      rails (>= 3.0)
+
+GIT
+  remote: git@git.asee.org:plugins/admin.git
+  revision: f7de7c4c58c16ecba13ecaa672f3f61817b3ec6c
+  branch: rails4
   specs:
     admin (1.0.0)
       activeresource
@@ -13,20 +33,6 @@ PATH
       rake (= 10.1.1)
       simple-navigation (= 3.11.0)
       will_paginate (~> 3.0)
-
-PATH
-  remote: ../authenticated_system-0733bb5b6c44
-  specs:
-    authenticated_system (0.0.1)
-
-PATH
-  remote: ../deploy
-  specs:
-    deploy (0.0.3)
-      capistrano (>= 2.11)
-      mysql2
-      newrelic_rpm
-      rails (>= 3.0)
 
 GEM
   remote: https://rubygems.org/
